@@ -24,7 +24,7 @@
         {% else %}
         <li class="nav-item">
             <a class="nav-link {{ 'collapsed' if (result.url != menuItem.url) }}"
-                href="../{{result.url.slice(0,-5)}}/{{result.url}}">
+                href="./{{result.url}}">
                 <i class="{{result.icon}}"></i>
                 <span>{{result.name}}</span>
             </a>
