@@ -4,6 +4,7 @@ import path, { resolve } from 'path'
 import { fileURLToPath } from 'url';
 import nunjucks from 'vite-plugin-nunjucks'
 import { viteStaticCopy } from 'vite-plugin-static-copy';
+import sidebarItems from './src/FrontEnd/menu.json';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -31,6 +32,7 @@ const getVariables = (mode) => {
         if (filename.includes('layouts/FrontEnd')) filename = `layouts/FrontEnd/${filename}`
         variables[filename + '.html'] = {
             web_title: "Mazer Admin Dashboard",
+            sidebarItems,
             isDev: mode === 'development'
         }
     })
