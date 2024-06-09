@@ -7,10 +7,10 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const FrontEndSrcFolder = "FrontEnd";
+const FrontEndSrcFolder = "src/FrontEnd";
 const FrontEndDistFolder = "publicDir/bin";
 
-const root = resolve(__dirname, `src/${FrontEndSrcFolder}`);
+const root = resolve(__dirname, `${FrontEndSrcFolder}`);
 
 const getFiles = () => {
     let files = {}
@@ -80,8 +80,8 @@ export default defineConfig((env) => ({
     plugins: [
         viteStaticCopy({
             targets: [
-                { src: normalizePath(resolve(__dirname, './src/assets/static')), dest: 'assets' },
-                { src: normalizePath(resolve(__dirname, `./${FrontEndDistFolder}/assets/compiled/fonts`)), dest: 'assets/compiled/css' },
+                { src: normalizePath(resolve(__dirname, `./${FrontEndSrcFolder}/assets/static`)), dest: 'assets' },
+                { src: normalizePath(resolve(__dirname, `./${FrontEndSrcFolder}/assets/compiled/fonts`)), dest: 'assets/compiled/css' },
                 { src: normalizePath(resolve(__dirname, "./node_modules/bootstrap-icons/bootstrap-icons.svg")), dest: 'assets/static/images' },
                 ...copyModules
             ],
