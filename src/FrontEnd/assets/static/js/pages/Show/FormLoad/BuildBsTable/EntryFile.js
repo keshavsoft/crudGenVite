@@ -1,6 +1,4 @@
 import { StartFunc as StartFuncTableTag } from "./TableTag.js";
-//import ConfigJson from `/bin/config/${jVarGlobalTableName}` with {type: 'json'};
-// import ConfigJson from '/bin/config/Openings.json' with {type: 'json'};
 
 const StartFunc = () => {
     StartFuncTableTag();
@@ -11,7 +9,6 @@ const jFLocalInitialize = async () => {
     var $table = $('#table');
     let jVarLocalData = await jFLocalReturnColumns();
 
-    console.log("jVarLocalData : ", jVarLocalData);
     $table.bootstrapTable({
         data: [],
         columns:jVarLocalData
@@ -33,7 +30,7 @@ const jFLocalReturnColumns = async () => {
 };
 
 const jFLocalTableSchema = async () => {
-    let jVarLocalResponse = await fetch(`/321/${jVarGlobalTableName}.json`);
+    let jVarLocalResponse = await fetch(`/DataSchema/321/${jVarGlobalTableName}.json`);
     let jVarLocalData = await jVarLocalResponse.json();
 
     return await jVarLocalData;
