@@ -1,0 +1,28 @@
+###Get for data from json file as array only
+GET http://localhost:7018/src/ksSample/BodyCheck
+
+###Get for data from json file as array only
+GET http://localhost:7018/src/ksSample/RowCount
+
+###Get for data from json file as array only
+GET http://localhost:7018/src/ksSample/DataOnly
+
+###Get for as is data
+GET http://localhost:7018/src/ksSample
+
+###Get for data transformed to Modal data
+GET http://localhost:7018/src/ksSample/FromModal
+
+
+###Get for data transformed to Modal data and Uuid also
+GET http://localhost:7018/src/ksSample/FromModalUuid
+
+
+###Get for data transformed to Modal data , Uuid and timeStamp also
+GET http://localhost:7018/src/ksSample/FromModalUuidAndTS
+
+###Get for as is data
+GET http://localhost:7018/src/ksSample/1
+
+###
+GET http://localhost:7018/src/ksSample/FilterData/<Key>/<Value>

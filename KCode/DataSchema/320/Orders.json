@@ -1,0 +1,18 @@
+  {
+    "OrderDate": {
+      "type": "STRING",
+      "allowNull": true
+    },
+    "CustomerId": {
+      "type": "INTEGER",
+      "references": {
+        "model": {
+          "tableName": "Customers"
+        },
+        "key": "id"
+      },
+      "allowNull": false,
+      "onUpdate": "cascade",
+      "onDelete": "cascade"
+    }
+  }

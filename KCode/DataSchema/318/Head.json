@@ -1,0 +1,10 @@
+{
+    "VoucherData": {
+        "type": "DATE",
+        "allowNull": false
+    },
+    "CustomerName": {
+        "type": "STRING",
+        "allowNull": false
+    }
+}
