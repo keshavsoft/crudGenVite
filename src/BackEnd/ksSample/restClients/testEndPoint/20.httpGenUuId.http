@@ -1,5 +1,5 @@
 ###copy the table schema from step 1(GET)
-POST http://localhost:7018/src/ksSample/GenUuId
+POST http://localhost:7018/src/BackEnd/ksSample/GenUuId
 content-type: application/json
 
 {

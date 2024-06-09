@@ -59,13 +59,6 @@ let LocalFuncForTestEndPoint = ({ inTablesCollection, inTo, inFrom }) => {
         return "children" in element === false;
     }).filter(element => element.name.endsWith(".json"))
 
-    // let LocalFirstLevelFolders = LocalTablesCollection.children.filter(element => {
-    //     return "children" in element === false;
-    // }).map(item => item.name).filter(element => element.name.endsWith(".json"))
-
-    // .map(item => item.name);
-    // console.log("aaaaaaaa : ", LocalFirstLevelFolders);
-
     LocalFirstLevelFolders.forEach(element => {
         let LoopInsideFileName = path.parse(element.name).name;
         let LocalFilePath = `${LocalTo}/${LoopInsideFileName}/${LocalTypeName}`;
@@ -73,7 +66,6 @@ let LocalFuncForTestEndPoint = ({ inTablesCollection, inTo, inFrom }) => {
         let LoopInsideFiles = fs.readdirSync(LocalFilePath, { withFileTypes: true })
             .filter(item => !item.name.endsWith(".json"))
             .map(item => item.name);
-
 
         LoopInsideFiles.forEach(LoopFile => {
             let LocalFileData = fs.readFileSync(`${LocalFilePath}/${LoopFile}`);
@@ -83,50 +75,7 @@ let LocalFuncForTestEndPoint = ({ inTablesCollection, inTo, inFrom }) => {
 
             fs.writeFileSync(`${LocalFilePath}/${LoopFile}`, LocalBinReplaced);
         });
-
-
-
     });
-
-    // let k1 = fs.readdirSync('./KData/JSON/316', { withFileTypes: true })
-    //     .filter(item => !item.isDirectory())
-    //     .map(item => item.name);
-
-
-    // let LoopInsideFileName = path.parse(LoopFile.name).name;
-    // let LocalFilePath = `${LocalTo}/${LoopInsideFileName}/${LocalTypeName}/${LocalFileName}`;
-
-    // let LocalFileData = fs.readFileSync(LocalFilePath);
-
-    // StartFuncCommonFuncs({
-    //     inTypeName: LocalTypeName,
-    //     inFilesCollection: LocalFirstLevelFolders,
-    //     inTo: LocalTo, inFrom: LocalFrom,
-    //     inFileName: "1GetSchema.http"
-    // });
-
-    // StartFuncCommonFuncs({
-    //     inTypeName: LocalTypeName,
-    //     inFilesCollection: LocalFirstLevelFolders,
-    //     inTo: LocalTo, inFrom: LocalFrom,
-    //     inFileName: "2ReturnRows.http"
-    // });
-
-    // StartFuncCommonFuncs({
-    //     inTypeName: LocalTypeName,
-    //     inFilesCollection: LocalFirstLevelFolders,
-    //     inTo: LocalTo, inFrom: LocalFrom,
-    //     inFileName: "3InsertNewRow.http"
-    // });
-
-    // StartFuncCommonFuncs({
-    //     inTypeName: LocalTypeName,
-    //     inFilesCollection: LocalFirstLevelFolders,
-    //     inTo: LocalTo, inFrom: LocalFrom,
-    //     inFileName: "4InsertMultipleRows.http"
-    // });
-
-
 };
 
 let LocalFuncForgetEndPoints = ({ inTablesCollection, inTo, inFrom }) => {
@@ -166,7 +115,6 @@ let LocalFuncForPutEndPoints = ({ inTablesCollection, inTo, inFrom }) => {
     LocalFuncCommon({ inTablesCollection, inTo, inFrom, inTypeName: LocalTypeName });
 };
 
-
 let LocalFuncCommon = ({ inTablesCollection, inTo, inFrom, inTypeName }) => {
     let LocalTypeName = inTypeName;
     let LocalTo = inTo;
@@ -196,8 +144,5 @@ let LocalFuncCommon = ({ inTablesCollection, inTo, inFrom, inTypeName }) => {
         });
     });
 };
-
-
-LocalFuncForPutEndPoints
 
 export { StartFunc };

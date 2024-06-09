@@ -1,4 +1,4 @@
 
 ###Get all the rows from the database in this table
-GET http://localhost:7018/src/ksSample/DataOnly
+GET http://localhost:7018/src/BackEnd/ksSample/DataOnly
 

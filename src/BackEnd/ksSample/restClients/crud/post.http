@@ -1,18 +1,18 @@
-POST http://localhost:7018/src/ksSample/BodyCheck
+POST http://localhost:7018/src/BackEnd/ksSample/BodyCheck
 content-type: application/json
 
 ###
-POST http://localhost:7018/src/ksSample/Filter
+POST http://localhost:7018/src/BackEnd/ksSample/Filter
 content-type: application/json
 
 ###
 
 
-POST http://localhost:7018/src/ksSample/UploadImage
+POST http://localhost:7018/src/BackEnd/ksSample/UploadImage
 content-type: application/json
 
 ###
-POST http://localhost:7018/src/ksSample
+POST http://localhost:7018/src/BackEnd/ksSample
 content-type: application/json
 
 {
@@ -20,7 +20,7 @@ content-type: application/json
 }
 
 ### GetSelectColumns
-POST http://localhost:7018/src/ksSample/GetSelectColumns
+POST http://localhost:7018/src/BackEnd/ksSample/GetSelectColumns
 content-type: application/json
 
 {
@@ -28,7 +28,7 @@ content-type: application/json
 }
 
 ### Upload
-POST http://localhost:7018/src/ksSample/Upload
+POST http://localhost:7018/src/BackEnd/ksSample/Upload
 content-type: application/json
 
 [{
@@ -45,7 +45,7 @@ content-type: application/json
 }]
 
 ### UploadFromModal
-POST http://localhost:7018/src/ksSample/UploadFromModal
+POST http://localhost:7018/src/BackEnd/ksSample/UploadFromModal
 content-type: application/json
 
 [{

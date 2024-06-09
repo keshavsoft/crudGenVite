@@ -1,5 +1,5 @@
 ###copy the table schema from step 1(GET)
-POST http://localhost:7018/src/ksSample/WithKeysCheck
+POST http://localhost:7018/src/BackEnd/ksSample/WithKeysCheck
 content-type: application/json
 
 {

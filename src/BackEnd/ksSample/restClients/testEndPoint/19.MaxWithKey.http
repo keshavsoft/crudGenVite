@@ -1,3 +1,3 @@
 ###We can get the value of the given id
 ### This end point is to insert inside a key in a row
-GET  http://localhost:7018/src/ksSample/Max/2
+GET  http://localhost:7018/src/BackEnd/ksSample/Max/2
