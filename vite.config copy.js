@@ -5,14 +5,13 @@ import nunjucks from 'vite-plugin-nunjucks';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 // import sidebarItems from './src/FrontEnd/menu.json';
 import { StartFunc as StartFuncReadDataSchema } from "./KCode/ReadDataSchema.js";
-import { StartFunc as StartFuncGetFiles } from "./viteFuncs/getFiles.js";
-
+import { StartFunc as StartFuncViteFuncs } from "./viteFuncs/getFiles.js";
 import { StartFunc as StartFuncBuildSideBarJson } from "./viteFuncs/BuildSideBarJson.js";
 import { StartFunc as StartFuncGetVariables } from "./viteFuncs/getVariables.js";
 import { StartFunc as StartFuncBuildHtmlArray } from "./viteFuncs/BuildHtmlArray.js";
 import { StartFunc as StartFuncCopyHtmlFiles } from "./viteFuncs/CopyHtmlFiles.js";
 
-import { StartFunc as StartFuncGetSideBarArray } from "./ks.js";
+import { StartFunc as StartFuncGetHtmlFiles } from "./viteFuncs/getHtmlFiles.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,10 +21,16 @@ const FrontEndDistFolder = "publicDir/bin";
 
 const root = resolve(__dirname, `${FrontEndSrcFolder}`);
 
-let sidebarItems = StartFuncGetSideBarArray();
+const LocalTableNames = StartFuncReadDataSchema();
 
-const files = StartFuncGetFiles({ inRootFolder: root });
+const files = StartFuncGetHtmlFiles({ inRootFolder: root });
 
+let sidebarItems = StartFuncBuildSideBarJson({ inFilesArray: files, inTablesArray: LocalTableNames.children });
+
+StartFuncCopyHtmlFiles({ inFilesArray: files, inTablesArray: LocalTableNames.children });
+
+let HtmlArray = StartFuncBuildHtmlArray({ inFilesArray: files, inTablesArray: LocalTableNames.children });
+// console.log("HtmlArray : ", HtmlArray);
 // Modules and extensions
 // If the value is true, then it will copy the files inside the `dist` folders
 // But if the value is false, it will copy the entire module files and folders
@@ -78,7 +83,7 @@ export default defineConfig((env) => ({
         }),
         nunjucks({
             templatesDir: root,
-            variables: StartFuncGetVariables({ mode: env.mode, inFilesArray: files, inSidebarItems: sidebarItems }),
+            variables: StartFuncGetVariables({ mode: env.mode, inFilesArray: HtmlArray, inSidebarItems: sidebarItems }),
             nunjucksEnvironment: {
                 filters: {
                     containString: (str, containStr) => {
@@ -109,7 +114,7 @@ export default defineConfig((env) => ({
         target: "chrome58",
         outDir: resolve(__dirname, `${FrontEndDistFolder}`),
         rollupOptions: {
-            input: files,
+            input: HtmlArray,
             output: {
             }
         },
