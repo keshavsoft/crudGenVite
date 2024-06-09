@@ -2,9 +2,10 @@ import { defineConfig, normalizePath, build } from 'vite'
 import fs from 'fs'
 import path, { resolve } from 'path'
 import { fileURLToPath } from 'url';
-import nunjucks from 'vite-plugin-nunjucks'
+import nunjucks from 'vite-plugin-nunjucks';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import sidebarItems from './src/FrontEnd/menu.json';
+import { StartFunc as StartFuncReadDataSchema } from "./KCode/ReadDataSchema.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,6 +14,10 @@ const FrontEndDistFolder = "publicDir/bin";
 
 const root = resolve(__dirname, `${FrontEndSrcFolder}`);
 
+const LocalTableNames = StartFuncReadDataSchema();
+
+// console.log("LocalTableNames : ", LocalTableNames);
+
 const getFiles = () => {
     let files = {}
 
@@ -20,11 +25,13 @@ const getFiles = () => {
         .filter(filename => filename.endsWith('.html'))
         .forEach(filename => {
             files[filename.slice(0, -5)] = resolve(root, filename)
-        })
-    return files
-}
+        });
+
+    return files;
+};
 
 const files = getFiles()
+// console.log("files : ", files);
 
 const getVariables = (mode) => {
     const variables = {}
@@ -95,13 +102,13 @@ export default defineConfig((env) => ({
             templatesDir: root,
             variables: getVariables(env.mode),
             nunjucksEnvironment: {
-
                 filters: {
                     containString: (str, containStr) => {
                         if (!str.length) return false
                         return str.indexOf(containStr) >= 0
                     },
                     startsWith: (str, targetStr) => {
+                        console.log(" kkkkkk , ",str, targetStr );
                         if (!str.length) return false
                         return str.startsWith(targetStr)
                     }
