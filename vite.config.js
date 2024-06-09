@@ -126,19 +126,6 @@ export default defineConfig((env) => ({
         rollupOptions: {
             input: files,
             output: {
-                entryFileNames: `assets/compiled/js/[name].js`,
-                chunkFileNames: `assets/compiled/js/[name].js`,
-
-                assetFileNames: (a) => {
-                    const extname = a.name.split('.')[1]
-                    let folder = extname ? `${extname}/` : ''
-
-                    // Put fonts into css folder
-                    if (['woff', 'woff2', 'ttf'].includes(extname))
-                        folder = 'fonts/'
-
-                    return `assets/compiled/${folder}[name][extname]`
-                }
             }
         },
     }
