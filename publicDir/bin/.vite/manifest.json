@@ -1,0 +1,78 @@
+{
+  "assets/static/assets/img/apple-touch-icon.png": {
+    "file": "assets/compiled/png/apple-touch-icon.png",
+    "src": "assets/static/assets/img/apple-touch-icon.png"
+  },
+  "assets/static/assets/img/favicon.png": {
+    "file": "assets/compiled/png/favicon.png",
+    "src": "assets/static/assets/img/favicon.png"
+  },
+  "assets/static/assets/img/messages-1.jpg": {
+    "file": "assets/compiled/jpg/messages-1.jpg",
+    "src": "assets/static/assets/img/messages-1.jpg"
+  },
+  "assets/static/assets/img/messages-2.jpg": {
+    "file": "assets/compiled/jpg/messages-2.jpg",
+    "src": "assets/static/assets/img/messages-2.jpg"
+  },
+  "assets/static/assets/img/messages-3.jpg": {
+    "file": "assets/compiled/jpg/messages-3.jpg",
+    "src": "assets/static/assets/img/messages-3.jpg"
+  },
+  "assets/static/assets/img/profile-img.jpg": {
+    "file": "assets/compiled/jpg/profile-img.jpg",
+    "src": "assets/static/assets/img/profile-img.jpg"
+  },
+  "assets/static/assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff": {
+    "file": "assets/compiled/fonts/bootstrap-icons.woff",
+    "src": "assets/static/assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff"
+  },
+  "assets/static/assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2": {
+    "file": "assets/compiled/fonts/bootstrap-icons.woff2",
+    "src": "assets/static/assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2"
+  },
+  "assets/static/assets/vendor/boxicons/fonts/boxicons.eot": {
+    "file": "assets/compiled/eot/boxicons.eot",
+    "src": "assets/static/assets/vendor/boxicons/fonts/boxicons.eot"
+  },
+  "assets/static/assets/vendor/boxicons/fonts/boxicons.svg": {
+    "file": "assets/compiled/svg/boxicons.svg",
+    "src": "assets/static/assets/vendor/boxicons/fonts/boxicons.svg"
+  },
+  "assets/static/assets/vendor/boxicons/fonts/boxicons.ttf": {
+    "file": "assets/compiled/fonts/boxicons.ttf",
+    "src": "assets/static/assets/vendor/boxicons/fonts/boxicons.ttf"
+  },
+  "assets/static/assets/vendor/boxicons/fonts/boxicons.woff": {
+    "file": "assets/compiled/fonts/boxicons.woff",
+    "src": "assets/static/assets/vendor/boxicons/fonts/boxicons.woff"
+  },
+  "assets/static/assets/vendor/boxicons/fonts/boxicons.woff2": {
+    "file": "assets/compiled/fonts/boxicons.woff2",
+    "src": "assets/static/assets/vendor/boxicons/fonts/boxicons.woff2"
+  },
+  "assets/static/assets/vendor/remixicon/remixicon.eot": {
+    "file": "assets/compiled/eot/remixicon.eot",
+    "src": "assets/static/assets/vendor/remixicon/remixicon.eot"
+  },
+  "assets/static/assets/vendor/remixicon/remixicon.svg": {
+    "file": "assets/compiled/svg/remixicon.svg",
+    "src": "assets/static/assets/vendor/remixicon/remixicon.svg"
+  },
+  "assets/static/assets/vendor/remixicon/remixicon.ttf": {
+    "file": "assets/compiled/fonts/remixicon.ttf",
+    "src": "assets/static/assets/vendor/remixicon/remixicon.ttf"
+  },
+  "assets/static/assets/vendor/remixicon/remixicon.woff": {
+    "file": "assets/compiled/fonts/remixicon.woff",
+    "src": "assets/static/assets/vendor/remixicon/remixicon.woff"
+  },
+  "assets/static/assets/vendor/remixicon/remixicon.woff2": {
+    "file": "assets/compiled/fonts/remixicon.woff2",
+    "src": "assets/static/assets/vendor/remixicon/remixicon.woff2"
+  },
+  "index.html": {
+    "file": "assets/compiled/css/index.css",
+    "src": "index.html"
+  }
+}
