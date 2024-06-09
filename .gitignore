@@ -29,3 +29,5 @@ bin/
 KData/
 
 .env
+
+publicDir/bin/*
