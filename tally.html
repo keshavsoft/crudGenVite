@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" id="myfile" name="myfile"><br><br>
+    <div id="fileContents"></div>
+    <script src="./xml2json.js"></script>
+
+    <script>
+        let StartFunc = () => {
+
+            var file = document.getElementById("myfile").files[0];
+            console.log("file : ", file);
+            if (file) {
+                var reader = new FileReader();
+                reader.readAsText(file, "text/xml");
+
+                reader.onload = function (evt) {
+                    console.log("evt : ", evt);
+                    // let k2 = xml2json(evt.target.result, document.getElementById("fileContents"));
+
+                    const parser = new DOMParser();
+                    var resu = evt.target.result;
+                    // console.log("aaaaaaaa : ", evt.target.result.replaceAll("&#4;", ""));
+                    const doc = parser.parseFromString(evt.target.result.replaceAll("&#4;", ""), "application/xml");
+                    console.log("doc : ", doc.documentElement);
+
+                    checkboxes = doc.documentElement.querySelectorAll("STOCKITEM");
+
+                    for (i in checkboxes) {
+                        console.log(checkboxes[i].attributes.NAME);
+                    }
+                    // document.getElementById("fileContents").innerHTML = doc.documentElement.innerHTML;
+                    // document.getElementById("fileContents").innerHTML = evt.target.result;
+                }
+                reader.onerror = function (evt) {
+                    document.getElementById("fileContents").innerHTML = "error reading file";
+                }
+            };
+
+        };
+    </script>
+</body>
+
+</html>
